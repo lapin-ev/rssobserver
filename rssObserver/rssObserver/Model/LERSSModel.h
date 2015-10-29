@@ -10,4 +10,18 @@
 
 @interface LERSSModel : NSObject
 
+@property(nonatomic, strong, readonly) NSString *title;
+@property(nonatomic, strong, readonly) NSString *pubDate;
+@property(nonatomic, strong, readonly) NSString *author;
+@property(nonatomic, strong, readonly) NSString *image;
+@property(nonatomic, strong, readonly) NSString *url;
+
+-(LERSSModel *)createRSSModelwithTitle:(NSString *)title
+                               pubDate:(NSString *)pubDate
+                                author:(NSString *)author
+                                 image:(NSString *)imageURLString
+                                   url:(NSString *)url;
+
+
+
 @end

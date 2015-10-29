@@ -21,6 +21,7 @@
 		FD85525E1BE29B290072D7B4 /* LERSSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85525D1BE29B290072D7B4 /* LERSSTableViewCell.m */; };
 		FD8552601BE29BAA0072D7B4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FD85525F1BE29BAA0072D7B4 /* Podfile */; };
 		FD8552631BE2A0540072D7B4 /* LERSSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552621BE2A0540072D7B4 /* LERSSWebViewController.m */; };
+		FD8552691BE2A64E0072D7B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD85526B1BE2A64E0072D7B4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,11 @@
 		FD85525F1BE29BAA0072D7B4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FD8552611BE2A0540072D7B4 /* LERSSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LERSSWebViewController.h; sourceTree = "<group>"; };
 		FD8552621BE2A0540072D7B4 /* LERSSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LERSSWebViewController.m; sourceTree = "<group>"; };
+		FD8552641BE2A5930072D7B4 /* header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.pch; sourceTree = "<group>"; };
+		FD8552651BE2A5D10072D7B4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FD8552661BE2A5D10072D7B4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FD85526A1BE2A64E0072D7B4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD85526C1BE2A6520072D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		FD8552031BE297FF0072D7B4 = {
 			isa = PBXGroup;
 			children = (
+				FD8552641BE2A5930072D7B4 /* header.pch */,
 				FD85520E1BE297FF0072D7B4 /* rssObserver */,
 				FD8552281BE298000072D7B4 /* rssObserverTests */,
 				FD8552331BE298000072D7B4 /* rssObserverUITests */,
@@ -158,6 +165,7 @@
 				FD8552121BE298000072D7B4 /* AppDelegate.h */,
 				FD8552131BE298000072D7B4 /* AppDelegate.m */,
 				FD8552101BE297FF0072D7B4 /* main.m */,
+				FD85526B1BE2A64E0072D7B4 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8552691BE2A64E0072D7B4 /* Localizable.strings in Resources */,
 				FD85521F1BE298000072D7B4 /* LaunchScreen.storyboard in Resources */,
 				FD85521C1BE298000072D7B4 /* Assets.xcassets in Resources */,
 				FD8552601BE29BAA0072D7B4 /* Podfile in Resources */,
@@ -492,6 +501,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FD8552191BE298000072D7B4 /* Base */,
+				FD8552651BE2A5D10072D7B4 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -500,8 +510,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				FD85521E1BE298000072D7B4 /* Base */,
+				FD8552661BE2A5D10072D7B4 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FD85526B1BE2A64E0072D7B4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD85526A1BE2A64E0072D7B4 /* ru */,
+				FD85526C1BE2A6520072D7B4 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

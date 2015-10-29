@@ -7,6 +7,7 @@
 //
 
 #import "LERSSTableViewController.h"
+#import "LERSSModel.h"
 
 @interface LERSSTableViewController ()
 
@@ -16,6 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    LERSSModel *model = [[LERSSModel alloc] init];
+    [model createRSSModelwithTitle:@"rr" pubDate:@"eeee" author:@"rtueu" image:@"image" url:@"url"];
+    NSLog(model.title);
+    
     
 }
 
