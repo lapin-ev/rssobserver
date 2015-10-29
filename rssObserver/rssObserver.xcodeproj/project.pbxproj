@@ -22,6 +22,10 @@
 		FD8552601BE29BAA0072D7B4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FD85525F1BE29BAA0072D7B4 /* Podfile */; };
 		FD8552631BE2A0540072D7B4 /* LERSSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552621BE2A0540072D7B4 /* LERSSWebViewController.m */; };
 		FD8552691BE2A64E0072D7B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD85526B1BE2A64E0072D7B4 /* Localizable.strings */; };
+		FD85526F1BE2B8660072D7B4 /* LEDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85526E1BE2B8660072D7B4 /* LEDataSource.m */; };
+		FD8552741BE2B92F0072D7B4 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */; };
+		FD8552781BE2BA600072D7B4 /* NSString+ApplcationPathes.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */; };
+		FD85527B1BE2C3290072D7B4 /* LERSSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,14 @@
 		FD8552661BE2A5D10072D7B4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FD85526A1BE2A64E0072D7B4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FD85526C1BE2A6520072D7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD85526D1BE2B8660072D7B4 /* LEDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDataSource.h; sourceTree = "<group>"; };
+		FD85526E1BE2B8660072D7B4 /* LEDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDataSource.m; sourceTree = "<group>"; };
+		FD8552721BE2B92F0072D7B4 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		FD8552761BE2BA600072D7B4 /* NSString+ApplcationPathes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ApplcationPathes.h"; sourceTree = "<group>"; };
+		FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ApplcationPathes.m"; sourceTree = "<group>"; };
+		FD8552791BE2C3290072D7B4 /* LERSSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LERSSFeedLoader.h; sourceTree = "<group>"; };
+		FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LERSSFeedLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +159,7 @@
 		FD85520E1BE297FF0072D7B4 /* rssObserver */ = {
 			isa = PBXGroup;
 			children = (
+				FD8552701BE2B92F0072D7B4 /* Categories */,
 				FD8552481BE2991D0072D7B4 /* Model */,
 				FD85524A1BE2991D0072D7B4 /* Utilities */,
 				FD85524B1BE2991D0072D7B4 /* View */,
@@ -258,6 +271,8 @@
 		FD85525A1BE29AFD0072D7B4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				FD85526D1BE2B8660072D7B4 /* LEDataSource.h */,
+				FD85526E1BE2B8660072D7B4 /* LEDataSource.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -265,8 +280,37 @@
 		FD85525B1BE29AFD0072D7B4 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
+				FD8552791BE2C3290072D7B4 /* LERSSFeedLoader.h */,
+				FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		FD8552701BE2B92F0072D7B4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FD8552751BE2BA600072D7B4 /* NSString+ApplcationPathes */,
+				FD8552711BE2B92F0072D7B4 /* UIColor+AppColors */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FD8552711BE2B92F0072D7B4 /* UIColor+AppColors */ = {
+			isa = PBXGroup;
+			children = (
+				FD8552721BE2B92F0072D7B4 /* UIColor+AppColors.h */,
+				FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */,
+			);
+			path = "UIColor+AppColors";
+			sourceTree = "<group>";
+		};
+		FD8552751BE2BA600072D7B4 /* NSString+ApplcationPathes */ = {
+			isa = PBXGroup;
+			children = (
+				FD8552761BE2BA600072D7B4 /* NSString+ApplcationPathes.h */,
+				FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */,
+			);
+			path = "NSString+ApplcationPathes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,12 +500,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8552561BE299810072D7B4 /* LERSSTableViewController.m in Sources */,
+				FD8552741BE2B92F0072D7B4 /* UIColor+AppColors.m in Sources */,
 				FD8552631BE2A0540072D7B4 /* LERSSWebViewController.m in Sources */,
 				FD8552531BE2993E0072D7B4 /* LERSSModel.m in Sources */,
 				FD8552141BE298000072D7B4 /* AppDelegate.m in Sources */,
 				FD8552111BE298000072D7B4 /* main.m in Sources */,
+				FD85526F1BE2B8660072D7B4 /* LEDataSource.m in Sources */,
+				FD8552781BE2BA600072D7B4 /* NSString+ApplcationPathes.m in Sources */,
 				FD8552591BE299B80072D7B4 /* LERSSWebView.m in Sources */,
 				FD85525E1BE29B290072D7B4 /* LERSSTableViewCell.m in Sources */,
+				FD85527B1BE2C3290072D7B4 /* LERSSFeedLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +660,8 @@
 			baseConfigurationReference = 1A25DEE880C37A12E21EB530 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/header.pch";
 				INFOPLIST_FILE = rssObserver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LEV.rssObserver;
@@ -624,6 +674,8 @@
 			baseConfigurationReference = 23142740298036D75A924EBE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/header.pch";
 				INFOPLIST_FILE = rssObserver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LEV.rssObserver;

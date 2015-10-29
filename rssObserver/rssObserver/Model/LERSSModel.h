@@ -22,6 +22,7 @@
                                  image:(NSString *)imageURLString
                                    url:(NSString *)url;
 
+-(NSString *)description;
 
 
 @end

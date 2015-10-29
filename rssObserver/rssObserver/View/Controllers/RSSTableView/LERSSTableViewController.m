@@ -19,8 +19,6 @@
     [super viewDidLoad];
     LERSSModel *model = [[LERSSModel alloc] init];
     [model createRSSModelwithTitle:@"rr" pubDate:@"eeee" author:@"rtueu" image:@"image" url:@"url"];
-    NSLog(model.title);
-    
     
 }
 

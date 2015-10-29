@@ -4,7 +4,9 @@
 //
 //  Created by Jack Lapin on 29.10.15.
 //  Copyright © 2015 Jack Lapin. All rights reserved.
-//
+
+#import "LERSSModel.h"
+
 #pragma mark Data Model Attributes names
 
 static NSString *const kRSSModelTitle = @"title";
@@ -15,17 +17,15 @@ static NSString *const kRssModelURL = @"url";
 
 #pragma mark - Stroryboard IDs
 
-static NSString *const TableControllerID = @"LETableViewController";
-static NSString *const CollectionControllerID = @"LECollectionViewController";
-static NSString *const EmbedContainerID = @"EmbedContainer";
+static NSString *const TableControllerID = @"LERSSTableViewController";
+static NSString *const WebViewControllerID = @"LERSSWebViewController";
 
 #pragma mark - Notifications
 
 static NSString *const NotificationDataFileContentDidChange = @"NotificationDataFileContentDidChange";
 static NSString *const NotificationLoginWasAcquired= @"NotificationLoginWasAcquired";
 static NSString *const NotificationNewDataNeedToDownload= @"NotificationNewDataNeedToDownload";
-static NSString *const NotificationUserAvatarPrepare= @"NotificationUserAvatarPrepare";
-static NSString *const NotificationTokenWasAcquiredReadyToParce= @"NotificationTokenWasAcquiredReadyToParce";
+
 
 #ifndef header_pch
 #define header_pch
