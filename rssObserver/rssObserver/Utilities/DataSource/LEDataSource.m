@@ -7,10 +7,12 @@
 //
 
 #import "LEDataSource.h"
+#import "LERSSFeedLoader.h"
+#import "RSSXMLParcer.h"
 
 @interface LEDataSource ()
 
-@property (strong, nonatomic) NSArray *rssModelsArray;
+@property (strong, nonatomic) NSMutableArray *rssModelsArray;
 
 @end
 
@@ -23,9 +25,9 @@
     self = [self init];
     if (self) {
         self.delegate = delegate;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadArrayWithPlist)
-                                                     name:NotificationDataFileContentDidChange object:nil];
-        [self loadArrayWithPlist];
+        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadArrayWithPlist)
+        //                                                     name:NotificationDataFileContentDidChange object:nil];
+        self.rssModelsArray = [NSMutableArray array];
     }
     return self;
 }
@@ -36,52 +38,47 @@
 
 #pragma mark - DataSource methods
 
-- (void)loadArrayWithPlist {
-    _rssModelsArray = [NSArray arrayWithContentsOfFile:[NSString documentsFolderPath]];
-
-    if ([self.delegate respondsToSelector:@selector(dataWasChanged:)]) {
-        [self.delegate dataWasChanged:self];
-    }
-    
-}
-
-
 - (NSUInteger)countModels {
     return [self.rssModelsArray count];
 }
 
-- (LECMFactory *)modelForIndex:(NSInteger)index {
+- (LERSSModel *)modelForIndex:(NSInteger)index {
     LERSSModel * model = [LERSSModel new];
-    NSMutableDictionary * dict = (NSMutableDictionary*)[self.rssModelsArray objectAtIndex:index];
-//    NSString * 
-//    model.name =[dict objectForKey:@"name"];
-//    model.imageName =[dict objectForKey:@"imageName"];
+    model = (LERSSModel*)[self.rssModelsArray objectAtIndex:index];
     return model;
 }
 
-- (void)reloadArrayWithPlist {
-    [self loadArrayWithPlist];
-}
-
-+ (void)copyPlistToAppDocumentsFolder {
-    NSString *documentsPath = [NSString documentsFolderPath];
-    NSString *resourcesPath = [NSString resourcesFolderPath];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    
-    if ([fileManager fileExistsAtPath:documentsPath] == NO) {
-        [fileManager copyItemAtPath:resourcesPath toPath:documentsPath error:&error];
-    }
-}
-
 #pragma mark - DataManage methods
+
+- (LERSSModel *)addNewModelWithDictData:(NSDictionary *)dict {
+    LERSSModel *model = [[LERSSModel alloc] init];
+    return model;
+}
+
+- (void)requestData{
+    __weak typeof(self) weakSelf = self;
+    [LERSSFeedLoader requestData:^(NSXMLParser *response) {
+        NSXMLParser *parser = response;
+        RSSXMLParcer *parserDelegate = [[RSSXMLParcer alloc] init];
+        [parser setDelegate:parserDelegate];
+        
+        [parser parse];
+
+    
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+- (void)parseDataDictionary:(NSDictionary *)dict{
+    
+}
 
 //+ (void)addCM:(LECMFactory *)cmObject {
 //    NSDictionary *newModel = [cmObject dictionaryFromModelRepresentation:cmObject];
 //    NSMutableArray *tempModelsArray = [NSMutableArray arrayWithContentsOfFile:[NSString documentsFolderPath]];
 //    [tempModelsArray addObject:newModel];
-//    
+//
 //    if ([tempModelsArray writeToFile:[NSString documentsFolderPath] atomically:YES]) {
 //        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationDataFileContentDidChange object:nil];
 //    } else {

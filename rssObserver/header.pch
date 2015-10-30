@@ -13,7 +13,7 @@ static NSString *const kRSSModelTitle = @"title";
 static NSString *const kRSSModelPubDate = @"pubDate";
 static NSString *const kRSSModelAuthor = @"author";
 static NSString *const kRssModelImage = @"image";
-static NSString *const kRssModelURL = @"url";
+static NSString *const kRssModelURL = @"link";
 
 #pragma mark - Stroryboard IDs
 

@@ -26,6 +26,7 @@
 		FD8552741BE2B92F0072D7B4 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */; };
 		FD8552781BE2BA600072D7B4 /* NSString+ApplcationPathes.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */; };
 		FD85527B1BE2C3290072D7B4 /* LERSSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */; };
+		FD85527F1BE2D8FB0072D7B4 /* RSSXMLParcer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85527E1BE2D8FB0072D7B4 /* RSSXMLParcer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ApplcationPathes.m"; sourceTree = "<group>"; };
 		FD8552791BE2C3290072D7B4 /* LERSSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LERSSFeedLoader.h; sourceTree = "<group>"; };
 		FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LERSSFeedLoader.m; sourceTree = "<group>"; };
+		FD85527D1BE2D8FB0072D7B4 /* RSSXMLParcer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSXMLParcer.h; sourceTree = "<group>"; };
+		FD85527E1BE2D8FB0072D7B4 /* RSSXMLParcer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSXMLParcer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 		FD85524A1BE2991D0072D7B4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FD85527C1BE2D8CF0072D7B4 /* Parcer */,
 				FD85525A1BE29AFD0072D7B4 /* DataSource */,
 				FD85525B1BE29AFD0072D7B4 /* Loader */,
 			);
@@ -311,6 +315,15 @@
 				FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */,
 			);
 			path = "NSString+ApplcationPathes";
+			sourceTree = "<group>";
+		};
+		FD85527C1BE2D8CF0072D7B4 /* Parcer */ = {
+			isa = PBXGroup;
+			children = (
+				FD85527D1BE2D8FB0072D7B4 /* RSSXMLParcer.h */,
+				FD85527E1BE2D8FB0072D7B4 /* RSSXMLParcer.m */,
+			);
+			path = Parcer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +515,7 @@
 				FD8552561BE299810072D7B4 /* LERSSTableViewController.m in Sources */,
 				FD8552741BE2B92F0072D7B4 /* UIColor+AppColors.m in Sources */,
 				FD8552631BE2A0540072D7B4 /* LERSSWebViewController.m in Sources */,
+				FD85527F1BE2D8FB0072D7B4 /* RSSXMLParcer.m in Sources */,
 				FD8552531BE2993E0072D7B4 /* LERSSModel.m in Sources */,
 				FD8552141BE298000072D7B4 /* AppDelegate.m in Sources */,
 				FD8552111BE298000072D7B4 /* main.m in Sources */,

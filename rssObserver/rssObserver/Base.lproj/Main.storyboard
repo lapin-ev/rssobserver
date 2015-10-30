@@ -72,6 +72,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="modelAuthor" destination="OXn-WO-X57" id="9Ul-Fi-WyB"/>
+                                    <outlet property="modelImage" destination="1He-i2-kuN" id="BZi-1s-X1Q"/>
+                                    <outlet property="modelPubDate" destination="Ubo-9M-UwU" id="mnM-dF-y0y"/>
+                                    <outlet property="modelTitle" destination="CKe-6d-Jq7" id="B5F-O1-1Bl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

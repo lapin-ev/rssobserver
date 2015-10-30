@@ -21,6 +21,7 @@
 
 - (NSUInteger)countModels;
 - (LERSSModel *)modelForIndex:(NSInteger)index;
+- (void)requestData;
 
 @end
 

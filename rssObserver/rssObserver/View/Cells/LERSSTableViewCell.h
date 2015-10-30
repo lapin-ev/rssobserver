@@ -10,4 +10,6 @@
 
 @interface LERSSTableViewCell : UITableViewCell
 
+- (void)configWithModel:(LERSSModel *)model;
+
 @end

@@ -46,8 +46,7 @@
         if (attr[1] == '@') {
             NSString *selector = [NSString stringWithCString:propertyName encoding:NSUTF8StringEncoding];
             SEL sel = sel_registerName([selector UTF8String]);
-            id gSelf = self;
-            NSObject * propertyValue = objc_msgSend(gSelf, sel);
+            NSObject * propertyValue = objc_msgSend(self, sel);
             if (propertyValue.description) {
                 propertyValues[selector] = propertyValue.description;
             }

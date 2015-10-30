@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^LESuccessBlock)(NSXMLParser *response);
+typedef void (^LEFailureBlock)(NSError *error);
+
 @interface LERSSFeedLoader : NSObject
+
++ (void) requestData:(LESuccessBlock)block failure:(LEFailureBlock)failure;
+
 
 @end
