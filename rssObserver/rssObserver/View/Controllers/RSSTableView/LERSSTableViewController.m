@@ -50,6 +50,19 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"webContentShow"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        LERSSModel *object = [self.dataSource modelForIndex:indexPath.row];
+        LERSSWebViewController *controller = (LERSSWebViewController *)[segue destinationViewController];
+        [controller setDetailItem:object];
+        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        controller.navigationItem.leftItemsSupplementBackButton = YES;
+    }
+}
+
 /*
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

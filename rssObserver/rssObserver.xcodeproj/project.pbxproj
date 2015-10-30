@@ -24,7 +24,6 @@
 		FD8552691BE2A64E0072D7B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD85526B1BE2A64E0072D7B4 /* Localizable.strings */; };
 		FD85526F1BE2B8660072D7B4 /* LEDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85526E1BE2B8660072D7B4 /* LEDataSource.m */; };
 		FD8552741BE2B92F0072D7B4 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */; };
-		FD8552781BE2BA600072D7B4 /* NSString+ApplcationPathes.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */; };
 		FD85527B1BE2C3290072D7B4 /* LERSSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */; };
 		FD85527F1BE2D8FB0072D7B4 /* RSSXMLParcer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85527E1BE2D8FB0072D7B4 /* RSSXMLParcer.m */; };
 /* End PBXBuildFile section */
@@ -84,8 +83,6 @@
 		FD85526E1BE2B8660072D7B4 /* LEDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDataSource.m; sourceTree = "<group>"; };
 		FD8552721BE2B92F0072D7B4 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
 		FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
-		FD8552761BE2BA600072D7B4 /* NSString+ApplcationPathes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ApplcationPathes.h"; sourceTree = "<group>"; };
-		FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ApplcationPathes.m"; sourceTree = "<group>"; };
 		FD8552791BE2C3290072D7B4 /* LERSSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LERSSFeedLoader.h; sourceTree = "<group>"; };
 		FD85527A1BE2C3290072D7B4 /* LERSSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LERSSFeedLoader.m; sourceTree = "<group>"; };
 		FD85527D1BE2D8FB0072D7B4 /* RSSXMLParcer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSXMLParcer.h; sourceTree = "<group>"; };
@@ -293,7 +290,6 @@
 		FD8552701BE2B92F0072D7B4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				FD8552751BE2BA600072D7B4 /* NSString+ApplcationPathes */,
 				FD8552711BE2B92F0072D7B4 /* UIColor+AppColors */,
 			);
 			path = Categories;
@@ -306,15 +302,6 @@
 				FD8552731BE2B92F0072D7B4 /* UIColor+AppColors.m */,
 			);
 			path = "UIColor+AppColors";
-			sourceTree = "<group>";
-		};
-		FD8552751BE2BA600072D7B4 /* NSString+ApplcationPathes */ = {
-			isa = PBXGroup;
-			children = (
-				FD8552761BE2BA600072D7B4 /* NSString+ApplcationPathes.h */,
-				FD8552771BE2BA600072D7B4 /* NSString+ApplcationPathes.m */,
-			);
-			path = "NSString+ApplcationPathes";
 			sourceTree = "<group>";
 		};
 		FD85527C1BE2D8CF0072D7B4 /* Parcer */ = {
@@ -520,7 +507,6 @@
 				FD8552141BE298000072D7B4 /* AppDelegate.m in Sources */,
 				FD8552111BE298000072D7B4 /* main.m in Sources */,
 				FD85526F1BE2B8660072D7B4 /* LEDataSource.m in Sources */,
-				FD8552781BE2BA600072D7B4 /* NSString+ApplcationPathes.m in Sources */,
 				FD8552591BE299B80072D7B4 /* LERSSWebView.m in Sources */,
 				FD85525E1BE29B290072D7B4 /* LERSSTableViewCell.m in Sources */,
 				FD85527B1BE2C3290072D7B4 /* LERSSFeedLoader.m in Sources */,

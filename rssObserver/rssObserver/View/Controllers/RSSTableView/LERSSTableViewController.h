@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LERSSWebViewController.h"
 
 @interface LERSSTableViewController : UITableViewController
+
+@property (nonatomic, strong) LERSSWebViewController *webViewConroller;
 
 @end

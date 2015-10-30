@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSString+ApplcationPathes.h"
 
 @class LECMFactory;
 

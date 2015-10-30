@@ -10,4 +10,6 @@
 
 @interface LERSSWebViewController : UIViewController
 
+@property (nonatomic, strong) LERSSModel *detailItem;
+
 @end
