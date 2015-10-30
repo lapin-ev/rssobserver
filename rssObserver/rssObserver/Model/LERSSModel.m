@@ -56,5 +56,4 @@
     return [NSString stringWithFormat:@"%@: %@", self.class, propertyValues];
 }
 
-
 @end

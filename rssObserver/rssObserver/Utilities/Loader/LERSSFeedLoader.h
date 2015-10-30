@@ -13,7 +13,7 @@ typedef void (^LEFailureBlock)(NSError *error);
 
 @interface LERSSFeedLoader : NSObject
 
-+ (void) requestData:(LESuccessBlock)block failure:(LEFailureBlock)failure;
++ (void)requestData:(LESuccessBlock)block failure:(LEFailureBlock)failure;
 
 
 @end

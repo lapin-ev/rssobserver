@@ -15,9 +15,6 @@ static NSString *const kRSSBaseURL = @"http://www.cbc.ca/cmlink/rss-topstories";
 
 + (void) requestData:(LESuccessBlock)block failure:(LEFailureBlock)failure {
     NSString *urlString = kRSSBaseURL;
-    
-    
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/rss+xml"];

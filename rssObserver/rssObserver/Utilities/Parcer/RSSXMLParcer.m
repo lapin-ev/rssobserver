@@ -24,7 +24,6 @@ static NSString* kItemElementName = @"item";
 
 - (void) parserDidStartDocument:(NSXMLParser *)parser {
     self.itemsArray = [NSMutableArray array];
-    NSLog(@"parserDidStartDocument");
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -48,8 +47,6 @@ static NSString* kItemElementName = @"item";
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser {
-    
-    NSLog(@"parserDidEndDocument");
     if (self.itemsArray.count>0){
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationDataFileContentDidChange object:self.itemsArray];
     }

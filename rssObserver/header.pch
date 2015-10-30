@@ -23,9 +23,6 @@ static NSString *const WebViewControllerID = @"LERSSWebViewController";
 #pragma mark - Notifications
 
 static NSString *const NotificationDataFileContentDidChange = @"NotificationDataFileContentDidChange";
-static NSString *const NotificationLoginWasAcquired= @"NotificationLoginWasAcquired";
-static NSString *const NotificationNewDataNeedToDownload= @"NotificationNewDataNeedToDownload";
-
 
 #ifndef header_pch
 #define header_pch
