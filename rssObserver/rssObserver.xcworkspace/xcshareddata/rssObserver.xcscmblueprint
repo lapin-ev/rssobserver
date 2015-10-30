@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "85E941750570BD6EB0BAE46A937ADBFE6EB58CF8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "84CD8E4C56C7BC21573CE36216B9E75ADA49952D" : 0,
+    "85E941750570BD6EB0BAE46A937ADBFE6EB58CF8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BD789BD7-8C81-4854-B344-C2BB85DF0B05",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "84CD8E4C56C7BC21573CE36216B9E75ADA49952D" : "",
+    "85E941750570BD6EB0BAE46A937ADBFE6EB58CF8" : "rssobserver\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "rssObserver",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "rssObserver\/rssObserver.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lapin-ev\/study_itStep",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "84CD8E4C56C7BC21573CE36216B9E75ADA49952D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lapin-ev\/rssobserver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "85E941750570BD6EB0BAE46A937ADBFE6EB58CF8"
+    }
+  ]
+}
