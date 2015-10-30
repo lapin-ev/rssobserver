@@ -25,8 +25,8 @@
     self = [self init];
     if (self) {
         self.delegate = delegate;
-        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadArrayWithPlist)
-        //                                                     name:NotificationDataFileContentDidChange object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeDataReadble:)
+                                                     name:NotificationDataFileContentDidChange object:nil];
         self.rssModelsArray = [NSMutableArray array];
     }
     return self;
@@ -50,40 +50,47 @@
 
 #pragma mark - DataManage methods
 
-- (LERSSModel *)addNewModelWithDictData:(NSDictionary *)dict {
-    LERSSModel *model = [[LERSSModel alloc] init];
-    return model;
-}
-
 - (void)requestData{
-    __weak typeof(self) weakSelf = self;
     [LERSSFeedLoader requestData:^(NSXMLParser *response) {
         NSXMLParser *parser = response;
         RSSXMLParcer *parserDelegate = [[RSSXMLParcer alloc] init];
         [parser setDelegate:parserDelegate];
-        
         [parser parse];
-
-    
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
 }
 
-- (void)parseDataDictionary:(NSDictionary *)dict{
-    
+-(void)makeDataReadble:(NSNotification *)notification{
+    NSMutableArray *arrOfNotificationObject = notification.object;
+    NSMutableArray *arrOfModels = [NSMutableArray array];
+    for (int i = 0; i < arrOfNotificationObject.count; i++){
+        NSDictionary *dict = (NSDictionary *)[arrOfNotificationObject objectAtIndex:i];
+        LERSSModel *model = [[LERSSModel alloc] init];
+        NSCharacterSet *titleCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n            "];
+        NSCharacterSet *autorCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      \t\t\t\t\t\t\t\t\t\t      "];
+        NSCharacterSet *linkCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      "];
+        NSCharacterSet *pubDateCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n                        "];
+        NSDateFormatter* df = [NSDateFormatter new];
+        [df setDateFormat:@"Eee, dd MMM yyyy HH:mm:ss ZZZ"];
+        
+        NSString *title = [[dict objectForKey:kRSSModelTitle] stringByTrimmingCharactersInSet:titleCharactersSet];
+        NSString *author = [[dict objectForKey:kRSSModelAuthor] stringByTrimmingCharactersInSet:autorCharactersSet];
+        NSString *link = [[dict objectForKey:kRssModelURL] stringByTrimmingCharactersInSet:linkCharactersSet];
+        NSString *pubDate = [[dict objectForKey:kRSSModelPubDate] stringByTrimmingCharactersInSet:pubDateCharactersSet];
+        
+        NSString *imgUrlString = [dict objectForKey:@"description"];
+        imgUrlString = [imgUrlString substringFromIndex:[imgUrlString rangeOfString:@"src='"].location + [@"src='" length]];
+        imgUrlString = [imgUrlString substringToIndex:[imgUrlString rangeOfString:@"' />   "].location];
+        [model createRSSModelwithTitle:title pubDate:pubDate author:author image:imgUrlString url:link];
+        [arrOfModels addObject:model];
+    }
+    if (arrOfModels.count > 0) {
+        self.rssModelsArray = arrOfModels;
+        if ([self.delegate respondsToSelector:@selector(dataWasChanged:)]) {
+            [self.delegate dataWasChanged:self];
+        }
+    }
 }
-
-//+ (void)addCM:(LECMFactory *)cmObject {
-//    NSDictionary *newModel = [cmObject dictionaryFromModelRepresentation:cmObject];
-//    NSMutableArray *tempModelsArray = [NSMutableArray arrayWithContentsOfFile:[NSString documentsFolderPath]];
-//    [tempModelsArray addObject:newModel];
-//
-//    if ([tempModelsArray writeToFile:[NSString documentsFolderPath] atomically:YES]) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationDataFileContentDidChange object:nil];
-//    } else {
-//        NSLog(@"New object not added");
-//    }
-//}
 
 @end

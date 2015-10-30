@@ -23,9 +23,6 @@
     [super viewDidLoad];
     self.dataSource = [[LEDataSource alloc] initWithDelegate:self];
     [self.dataSource requestData];
-//    LERSSModel *model = [[LERSSModel alloc] init];
-//    [model createRSSModelwithTitle:@"rr" pubDate:@"eeee" author:@"rtueu" image:@"image" url:@"url"];
-    
 }
 
 #pragma mark - Table view data source
@@ -42,7 +39,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = NSStringFromClass([LERSSTableViewCell class]);
     LERSSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    [cell configWithModel:[self.dataSource modelForIndex:indexPath.row]];
+    NSInteger index=indexPath.row;
+    [cell configWithModel:[self.dataSource modelForIndex:index]];
     return cell;
 }
 

@@ -23,9 +23,9 @@
 
 -(void)configWithModel:(LERSSModel *)model{
     self.modelTitle.text = [model valueForKey:kRSSModelTitle];
-    self.modelPubDate.text = [model valueForKey:kRSSModelTitle];
-    self.modelAuthor.text = [model valueForKey:kRSSModelTitle];
-    NSURL *imageURL = [model valueForKey:kRssModelURL];
+    self.modelPubDate.text = [model valueForKey:kRSSModelPubDate];
+    self.modelAuthor.text = [model valueForKey:kRSSModelAuthor];
+    NSURL *imageURL = [model valueForKey:kRssModelImage];
     [self.modelImage sd_setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"NoImage"]];
 }
 

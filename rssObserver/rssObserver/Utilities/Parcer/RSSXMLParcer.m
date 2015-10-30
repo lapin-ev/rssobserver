@@ -50,36 +50,10 @@ static NSString* kItemElementName = @"item";
 - (void) parserDidEndDocument:(NSXMLParser *)parser {
     
     NSLog(@"parserDidEndDocument");
-    [self makeDataReadble:(self.itemsArray)];
-}
-
--(NSArray *)makeDataReadble:(NSMutableArray *)arr{
-    NSMutableArray *arrOfModels = [NSMutableArray array];
-    for (int i = 0; i < arr.count; i++){
-        NSDictionary *dict = (NSDictionary *)[arr objectAtIndex:i];
-        LERSSModel *model = [[LERSSModel alloc] init];
-        NSCharacterSet *titleCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n            "];
-        NSCharacterSet *autorCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      \t\t\t\t\t\t\t\t\t\t      "];
-        NSCharacterSet *linkCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      "];
-        NSCharacterSet *pubDateCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n                        "];
-        NSDateFormatter* df = [NSDateFormatter new];
-        [df setDateFormat:@"Eee, dd MMM yyyy HH:mm:ss ZZZ"];
-
-        NSString *title = [[dict objectForKey:kRSSModelTitle] stringByTrimmingCharactersInSet:titleCharactersSet];
-        NSString *author = [[dict objectForKey:kRSSModelAuthor] stringByTrimmingCharactersInSet:autorCharactersSet];
-        NSString *link = [[dict objectForKey:kRssModelURL] stringByTrimmingCharactersInSet:linkCharactersSet];
-        NSString *pubDate = [[dict objectForKey:kRSSModelPubDate] stringByTrimmingCharactersInSet:pubDateCharactersSet];
-        
-        NSString *imgUrlString = [dict objectForKey:@"description"];
-        imgUrlString = [imgUrlString substringFromIndex:[imgUrlString rangeOfString:@"src='"].location + [@"src='" length]];
-        imgUrlString = [imgUrlString substringToIndex:[imgUrlString rangeOfString:@"' />   "].location];
-        [model createRSSModelwithTitle:title pubDate:pubDate author:author image:imgUrlString url:link];
-        [arrOfModels addObject:model];
+    if (self.itemsArray.count>0){
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationDataFileContentDidChange object:self.itemsArray];
     }
-    return arrOfModels;
 }
-
-
 
 @end
 
