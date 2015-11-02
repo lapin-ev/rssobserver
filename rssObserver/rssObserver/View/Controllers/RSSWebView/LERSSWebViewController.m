@@ -12,9 +12,6 @@
 @interface LERSSWebViewController ()
 
 @property (nonatomic, weak) IBOutlet LERSSWebView *webView;
-@property (nonatomic, weak) IBOutlet UINavigationController *navigationController;
-
-@property (nonatomic, weak) IBOutlet UIToolbar *toolbar;
 
 @end
 
@@ -45,7 +42,6 @@
     UITouch *touch = [touches anyObject];
     if (touch.tapCount == 2) {
         [self.navigationController setNavigationBarHidden:NO];
-        self.toolbar.hidden = FALSE;
         [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self   selector:@selector(hidebar) userInfo:nil repeats:NO];
     }
 }
@@ -53,7 +49,6 @@
 - (void)hidebar
 {
     [self.navigationController setNavigationBarHidden:YES];
-    self.toolbar.hidden = TRUE;
 }
 
 @end
