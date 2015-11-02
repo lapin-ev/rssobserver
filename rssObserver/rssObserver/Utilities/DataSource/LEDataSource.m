@@ -72,13 +72,19 @@
         NSCharacterSet *linkCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      "];
         NSCharacterSet *pubDateCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n                        "];
         NSDateFormatter* df = [NSDateFormatter new];
-        [df setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss vvv"];
+        [df setDateFormat:@"EEE, dd LLL yyyy HH:mm:ss vvv"];
+        NSLocale *loc = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        [df setLocale: loc];
+
         
         NSString *title = [[dict objectForKey:kRSSModelTitle] stringByTrimmingCharactersInSet:titleCharactersSet];
         NSString *author = [[dict objectForKey:kRSSModelAuthor] stringByTrimmingCharactersInSet:autorCharactersSet];
         NSString *link = [[dict objectForKey:kRssModelURL] stringByTrimmingCharactersInSet:linkCharactersSet];
         NSString *pubDate = [[dict objectForKey:kRSSModelPubDate] stringByTrimmingCharactersInSet:pubDateCharactersSet];
         
+        NSDate *dateOfPub = [df dateFromString:pubDate];
+        [df setDateFormat:@"EEE, dd LLL yyyy HH:mm"];
+        pubDate = [df stringFromDate:dateOfPub];
         NSString *imgUrlString = [dict objectForKey:@"description"];
         imgUrlString = [imgUrlString substringFromIndex:[imgUrlString rangeOfString:@"src='"].location + [@"src='" length]];
         imgUrlString = [imgUrlString substringToIndex:[imgUrlString rangeOfString:@"' />   "].location];
