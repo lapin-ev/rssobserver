@@ -72,7 +72,7 @@
         NSCharacterSet *linkCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n      "];
         NSCharacterSet *pubDateCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"\n                        "];
         NSDateFormatter* df = [NSDateFormatter new];
-        [df setDateFormat:@"Eee, dd MMM yyyy HH:mm:ss ZZZ"];
+        [df setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss vvv"];
         
         NSString *title = [[dict objectForKey:kRSSModelTitle] stringByTrimmingCharactersInSet:titleCharactersSet];
         NSString *author = [[dict objectForKey:kRSSModelAuthor] stringByTrimmingCharactersInSet:autorCharactersSet];

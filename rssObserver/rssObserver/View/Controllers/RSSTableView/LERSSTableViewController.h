@@ -11,6 +11,4 @@
 
 @interface LERSSTableViewController : UITableViewController
 
-@property (nonatomic, strong) LERSSWebViewController *webViewConroller;
-
 @end

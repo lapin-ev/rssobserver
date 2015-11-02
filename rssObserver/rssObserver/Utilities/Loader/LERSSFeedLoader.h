@@ -15,5 +15,4 @@ typedef void (^LEFailureBlock)(NSError *error);
 
 + (void)requestData:(LESuccessBlock)block failure:(LEFailureBlock)failure;
 
-
 @end
